@@ -1,20 +1,63 @@
-<h2>Edit Task</h2>
+<p>edituser works!</p>
 
 <form>
-    <div>
-      <tr><td><label for="taskname">Task Name</label></td>&nbsp;
-      <td><input type="text" taskname="taskname" id="taskname"></td></tr>
-      <br>
-      <tr><td>
-      Status
-<select name="status" id="status">
-    <option value="">Completed</option>
-    <option value="3">Pending</option>
-    <option value="2">Failed</option>
-</select>
-</td></tr>
-    </div>
-    <br>
-    <button>Submit</button>&nbsp;&nbsp;&nbsp;
-    <button>Reset</button>
-    </form>
+
+    <table class="table table-bordered" *ngIf="edituser">
+
+        <tbody>
+
+            <tr>
+
+                <th>id</th>
+
+                <td>
+
+                    <input type="text" name="id" id="id" value="{{edituser.id}}"readonly>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <th>name</th>
+
+                <td>
+
+                    <input type="text" name="name" id="name" value="{{edituser.name}}">
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <th>email</th>
+
+                <th>
+
+                    <input type="text" name="name" id="email" value="{{edituser.email}}">
+
+                </th>
+
+            </tr>
+
+            <tr>
+
+                <th></th>
+
+                <td>
+
+                    <button type="button" class="btn btn-success"
+
+                    (click)="updateuser()">update</button>&nbsp;
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</form>
