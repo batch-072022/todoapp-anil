@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { EdittaskComponent } from './edittask/edittask.component';
 import { ListtasksComponent } from './listtasks/listtasks.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'addtask',component:AddtaskComponent},
   {path:'edittask',component:EdittaskComponent},
   {path:'listtasks',component:ListtasksComponent},
-  {path:'',redirectTo:'home',pathMatch:'full'}
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path:'view-user',component:ViewUserComponent}
 
 ];
 

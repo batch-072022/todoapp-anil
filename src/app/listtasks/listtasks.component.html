@@ -1,74 +1,35 @@
-<h1>List Users</h1>
+<h3>Login Users</h3>
 
-
-
-
-<table border="1">
-
+<table class="table table-bordered" *ngIf="users">
     <thead>
-
-        <th> Sno</th>
-
-        <th>Task name</th>
-
-        <th>Status</th>
-
-        <th>Created Date</th>
-
-        <th>Actions</th>
-
-
-
-
+        <tr>
+            <th>Sno
+            </th>
+            <th>Id</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
     </thead>
-
     <tbody>
-
-        <tr>
-
-            <td>1</td>
-
-            <td>Anil Barla</td>
-
-            <td>completed</td>
-
-            <td>01-Aug-2022</td>
-
-           
-
-              <td>  <a href="url">Edit</a> </td>
-
-            </tr>
-
-                <tr>
-
-                <td>2</td>
-
-            <td>Install git</td>
-
-            <td>PENDING</td>
-
-            <td>01-Aug-2022</td>
-
-             <td>   <a href="url">Edit</a> </td>
-
+        <tr *ngFor="let u of users;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{u.id}}</td>
+            <td>{{u.firstname}}</td>
+            <td>{{u.lastname}}</td>
+            <td>{{u.email}}</td>
+            <td>
+                <a routerLink="/view-user" class="btn btn-primary">View</a>&nbsp;&nbsp;
+                <a routerLink="/edittask" class="btn btn-info">Edit</a>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger"
+                (click)="deleteUsers()">Delete</button>
+            </td>
         </tr>
+    </tbody>
+</table>
 
-        <tr>
+<div *ngIf="!users">
+    No records
+</div>
 
-            <td>3</td>
-            <td>Vidhya</td>
-
-            <td>PENDING</td>
-    
-            <td>01-Aug-2022</td>
-    
-           
-    
-             <td>   <a href="url">Edit</a> </td>
-    
-        </tr>
-    
-    
-    
-        <tr>
